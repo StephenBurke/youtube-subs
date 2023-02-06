@@ -2,16 +2,14 @@ import numpy as np
 import pandas as pd
 import pickle
 
-df = pd.read_csv('./youtube_subs.csv',
-                 index_col=0,
-                 dtype={
-                     'Rank': 'int16',
-                     'Youtube Channel': 'string',
-                     'Subscribers': 'int32',
-                     'Video Views': 'int64',
-                     'Video Count': 'int32',
-                     'Category': 'category',
-                     'Started': 'int32'})
+df = pd.read_csv('./youtube_subs.csv', index_col=0, dtype={
+    'Rank': 'int16',
+    'Youtube Channel': 'string',
+    'Subscribers': 'int32',
+    'Video Views': 'int64',
+    'Video Count': 'int32',
+    'Category': 'category',
+    'Started': 'int32'})
 
 df = df.rename({
     'Youtube Channel': 'Youtube_Channel',
