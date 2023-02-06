@@ -1,3 +1,7 @@
+import numpy as np
+import pandas as pd
+import pickle
+
 df = pd.read_csv('./youtube_subs.csv',
                  index_col=0,
                  dtype={
