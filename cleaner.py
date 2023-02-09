@@ -17,6 +17,10 @@ df = df.rename({
     'Video Count': 'Video_Count'
 }, axis=1)
 
+df['Category'].replace({
+    'https://us.youtubers.me/global/all/top-1000-most_subscribed-youtube-channels': 'Other'},
+    inplace=True)
+
 df = df[df.Video_Views != 0]
 df['Rank'] = df['Subscribers'].rank(ascending=False)
 df['Rank'] = df['Rank'].astype(int)
