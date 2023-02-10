@@ -24,5 +24,5 @@ df['Category'].replace({
 df = df[df.Video_Views != 0]
 df['Rank'] = df['Subscribers'].rank(ascending=False)
 df['Rank'] = df['Rank'].astype(int)
-
+df['views_over_counts'] = df.Video_Views/df.Video_Count
 df.to_pickle('./youtube_subs.pkl')
