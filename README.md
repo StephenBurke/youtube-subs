@@ -4,6 +4,8 @@
 
 Data visualization of highest subscribed youtube channels
 
+![YouTube top subscriber visualizations](./graph.png)
+
 ## Contribute
 
 1. Fork this repository
