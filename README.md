@@ -2,7 +2,7 @@
 
 ## Description
 
-Data visualization of highest subscribed youtube channels
+Data visualization of highest subscribed youtube channels from April 2019 to December 2022
 
 ![YouTube top subscriber visualizations](./graph.png)
 
