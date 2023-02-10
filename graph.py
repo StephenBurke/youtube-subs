@@ -9,26 +9,40 @@ import seaborn.objects as so
 
 df = pd.read_pickle('./youtube_subs.pkl')
 
-plt.rcParams["figure.figsize"] = [20, 8]
-plt.rcParams["figure.autolayout"] = True
+# Initialise the subplot function using number of rows and columns
+fig, axis = plt.subplots(1, 2, figsize=(20, 8), sharey=True)
+fig.suptitle('Top Subscribered YouTube Channels \nApril 2019 to December 2022')
+
+plt.yticks(rotation=20)
+
 sns.set_style('dark')
-sns.set(font_scale=1.5)
+sns.set(font_scale=1.7)
+sns.color_palette('pastel')
 
-text_size = 23
-subtitle_size = 20
-
-bar_plot = sns.barplot(
+# views v category
+sns.barplot(
+    ax=axis[0],
     data=df,
     y='Category',
     x='Video_Views',
     errorbar=None,
     orient='h')
 
-bar_plot.set_xlabel('Video Views (in 10 billions)')
-bar_plot.set_title(
-    'YouTube Views per category spanning from April 2019 to December 2022')
+axis[0].set_title('YouTube views')
+axis[0].set_xlabel("Video Views (in 10's of billions)")
 
-# next add plot showing category with views per video count
 
-plt.yticks(rotation=20)
+# views/video_count v category
+sns.barplot(
+    ax=axis[1],
+    data=df,
+    y='Category',
+    x='views_over_counts',
+    errorbar=None,
+    orient='h')
+
+axis[1].set_title('YouTube views per video count')
+axis[1].set_xlabel("Video Views (in 10's of millions)")
+axis[1].set_ylabel('')
+
 plt.show()
