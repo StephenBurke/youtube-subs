@@ -4,7 +4,7 @@
 
 Data visualization of highest subscribed youtube channels from April 2019 to December 2022
 
-![Visualizations of top YouTube subscribed channels](./graph.png?raw=true)
+![Visualizations of top YouTube subscribed channels](./images/graph.png?raw=true)
 
 ## Contribute
 
